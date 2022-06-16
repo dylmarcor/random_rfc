@@ -3,7 +3,7 @@ RFC Unit Test's
 """
 
 import unittest
-import ..src.random_rfc.py
+from ..src.random_rfc.py import *
 
 class TestRfc(unittest.TestCase):
 
@@ -19,5 +19,5 @@ class TestRfc(unittest.TestCase):
         url = rfc_generator(rfc, form)
         self.assertIs(url, "https://www.rfc-editor.org/rfc/rfc3452.txt")
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()
