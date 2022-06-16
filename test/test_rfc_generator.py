@@ -17,7 +17,7 @@ class TestRfc(unittest.TestCase):
         rand_num = 3452
         form = 'txt'
         url = rfc_generator(http, 3452, form)
-        self.assertEqual(url, "https://www.rfc-editor.org/rfc/rfc3452.txt")
+        self.assertIs(url, "https://www.rfc-editor.org/rfc/rfc3452.txt")
 
 if __name__ = "__main__":
     unittest.main()
