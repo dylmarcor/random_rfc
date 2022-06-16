@@ -3,7 +3,10 @@ RFC Unit Test's
 """
 
 import unittest
-from .src.random_rfc.py import *
+import random
+from src import random_rfc
+
+rfc_generator = random_rfc.rfc_generator
 
 class TestRfc(unittest.TestCase):
 
@@ -13,11 +16,11 @@ class TestRfc(unittest.TestCase):
         """
 
         # Test for txt type
-        rfc = "https://www.rfc-editor.org/rfc/rfc"
-        rand_num = 3452
+        rand_num = str(random.randint(1, 9260))
+        rfc = "https://www.rfc-editor.org/rfc/rfc" + rand_num
         form = 'txt'
         url = rfc_generator(rfc, form)
-        self.assertIs(url, "https://www.rfc-editor.org/rfc/rfc3452.txt")
+        self.assertEquals(url, "https://www.rfc-editor.org/rfc/rfc" + rand_num + "." + form)
 
 if __name__ == "__main__":
     unittest.main()
