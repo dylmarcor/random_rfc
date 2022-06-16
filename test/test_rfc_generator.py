@@ -14,13 +14,19 @@ class TestRfc(unittest.TestCase):
         """
         Test that a correct URL is generated
         """
+        rand_num = str(random.randint(1, 9260))
+        RFC_EDITOR_URL = "https://www.rfc-editor.org/rfc/rfc"
+        rfc = RFC_EDITOR_URL + rand_num
 
         # Test for txt type
-        rand_num = str(random.randint(1, 9260))
-        rfc = "https://www.rfc-editor.org/rfc/rfc" + rand_num
         form = 'txt'
         url = rfc_generator(rfc, form)
-        self.assertEquals(url, "https://www.rfc-editor.org/rfc/rfc" + rand_num + "." + form)
+        self.assertEqual(url, RFC_EDITOR_URL + rand_num + "." + form)
+        # Test for html type
+        form = 'html'
+        url = rfc_generator(rfc, form)
+        self.assertEqual(url, RFC_EDITOR_URL + rand_num + "." + form)
+
 
 if __name__ == "__main__":
     unittest.main()
