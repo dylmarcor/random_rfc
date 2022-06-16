@@ -3,7 +3,7 @@ RFC Unit Test's
 """
 
 import unittest
-from ..src.random_rfc.py import *
+from .src.random_rfc.py import *
 
 class TestRfc(unittest.TestCase):
 

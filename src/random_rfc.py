@@ -15,7 +15,7 @@ import urllib.request
 rand_num = random.randint(0, 9260)
 
 # Create initial RFC url
-rfc = "https://www.rfc-editor.org/rfc/rfc" + rand_num
+rfc = "https://www.rfc-editor.org/rfc/rfc" + str(rand_num)
 
 # Command intro - grab type of file wanted (default:txt)
 print("What file would you like the random RFC in?")
@@ -25,6 +25,6 @@ file_type = input()
 def rfc_generator(rfc, file_type):
 
     if (file_type):
-        return url  + file_type
+        return rfc  + '.' + file_type
     else:
-        return url + '.txt'
+        return rfc + '.txt'
