@@ -9,6 +9,7 @@ in a few different ways. Will eventually be adpated for web usage as well.
 
 import sys
 import random
+import subprocess
 import urllib.request
 
 # Generate random number for RFC url
@@ -32,7 +33,12 @@ def rfc_generator(rfc, f_format):
 
 # From RFC Generator request URL and get results
 rfc_url = urllib.request.urlopen(rfc_generator(rfc, file_type))
+txt = []
 
 for line in rfc_url:
-    line = line.decode("utf-8")
-    print(line.rstrip('\n'))
+    print(line.decode("utf-8").rstrip())
+    # print(line.rstrip('\n'))
+    # txt.append(line.rstrip('\n'))
+
+# Process output to 'less' command in shell
+subprocess.run(['less'], stdout=subprocess.PIPE, input=rfc_url.read().decode('utf-8'), shell= True, text=True).stdout
