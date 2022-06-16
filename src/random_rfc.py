@@ -33,6 +33,6 @@ def rfc_generator(rfc, f_format):
 # From RFC Generator request URL and get results
 rfc_url = urllib.request.urlopen(rfc_generator(rfc, file_type))
 
-# print('result code: '+ str(rfc_url.getcode()))
-with open(rfc_url.read(), 'r') as fp:
-    fp.read_lines()
+for line in rfc_url:
+    line = line.decode("utf-8")
+    print(line.rstrip('\n'))
