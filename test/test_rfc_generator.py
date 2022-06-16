@@ -13,10 +13,10 @@ class TestRfc(unittest.TestCase):
         """
 
         # Test for txt type
-        http = "https://www.rfc-editor.org/rfc/rfc"
+        rfc = "https://www.rfc-editor.org/rfc/rfc"
         rand_num = 3452
         form = 'txt'
-        url = rfc_generator(http, 3452, form)
+        url = rfc_generator(rfc, form)
         self.assertIs(url, "https://www.rfc-editor.org/rfc/rfc3452.txt")
 
 if __name__ = "__main__":
