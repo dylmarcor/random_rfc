@@ -1,7 +1,14 @@
 """
-RFC Generator function Unit Test
+RFC Unit Test's
 """
 
-from ..src.random_rfc.py import rfc_generator
+import unittest
+import ..src.random_rfc.py
 
+class TestRfc(unittest.TestCase):
 
+    def test_rfc_generator(self):
+        pass
+
+if __name__ = "__main__":
+    unittest.main()
