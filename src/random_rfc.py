@@ -19,25 +19,10 @@ rand_num = random.randint(0, 9260)
 rfc = "https://www.rfc-editor.org/rfc/rfc" + str(rand_num) + '.txt'
 rfc_url = urllib.request.urlopen(rfc)
 
+# Display RFC
 for line in rfc_url:
     print(line.decode("utf-8").rstrip())
 
-# Command intro - grab type of file wanted (default:txt)
-# print("What file would you like the random RFC in?")
-# print("Default is txt")
-# file_type = input()
-# file_type = 'txt'
-
-def rfc_generator(rfc, f_format):
-
-    if (f_format):
-        return rfc  + '.' + f_format
-    else:
-        return rfc + '.txt'
-
-# From RFC Generator request URL and get results
-# rfc_url = urllib.request.urlopen(rfc_generator(rfc, file_type))
-# txt = []
-
+# TODO: Figure out how to pipe print to less shell command
 # Process output to 'less' command in shell
-subprocess.run(['less'], stdout=subprocess.PIPE, input=rfc_url.read().decode('utf-8'), shell= True, text=True).stdout
+# subprocess.run(['less'], stdout=subprocess.PIPE, input=rfc_url.read().decode('utf-8'), shell= True, text=True).stdout
