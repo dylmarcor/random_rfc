@@ -1,1 +1,1 @@
-grep --color=always -R "TODO" .
+grep --exclude=checktodo.sh --color=always -R "TODO" .
