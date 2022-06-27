@@ -23,6 +23,7 @@ rfc_url = urllib.request.urlopen(rfc)
 for line in rfc_url:
     print(line.decode("utf-8").rstrip())
 
+# TODO: Add specific RFC if desired function
 # TODO: Figure out how to pipe print to less shell command
 # Process output to 'less' command in shell
 # subprocess.run(['less'], stdout=subprocess.PIPE, input=rfc_url.read().decode('utf-8'), shell= True, text=True).stdout
