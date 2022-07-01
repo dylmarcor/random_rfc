@@ -12,8 +12,6 @@ import random
 import subprocess
 import urllib.request
 
-def main():
-    subprocess.run(["python3", "random.rfc", "|", "less"])
 
 # Generate random number for RFC url
 rand_num = random.randint(0, 9260)
@@ -44,5 +42,3 @@ for line in rfc_url:
 subprocess.run(["less"], capture_output=True)
 # subprocess.run(['less'], stdout=subprocess.PIPE, input=rfc_url.read().decode('utf-8'), shell= True, text=True).stdout
 
-if __name__ == "__main__":
-    main()
