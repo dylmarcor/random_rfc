@@ -12,15 +12,16 @@ import random
 import subprocess
 import urllib.request
 
-
 # Generate random number for RFC url
 rand_num = random.randint(0, 9260)
 
 # Ask for desired direction
 user_input = input("Would you like a random RFC? y/n: ")
+print(user_input)
 
-if user_input == 'X' or 'x':
-    # Get user input for custome RFC
+if user_input == 'N' or 'n':
+    print("why is it getting here?")
+    # Get user input for custom RFC
     user_input = input("What number RFC would you like? Select between 1 - 9260: ")
     rfc = "https://www.rfc-editor.org/rfc/rfc" + user_input + '.txt'
     rfc_url = urllib.request.urlopen(rfc)
